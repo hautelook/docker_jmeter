@@ -1,8 +1,8 @@
-# Docker JMeter 2.12 with plugins 1.2.0 for non-gui use
+# Docker JMeter 2.13 with plugins 1.2.0 for non-gui use
 
 ## Contains
 
-* JMeter 2.12
+* JMeter 2.13
 * JMeterPlugins-Standard 1.2.0
 * JMeterPlugins-Extras 1.2.0
 * JMeterPlugins-ExtrasLibs 1.2.0
@@ -11,7 +11,7 @@
 
 ### Usage for child layer
 
-  FROM rdpanek/jmeter:2.12
+  FROM rdpanek/jmeter:1.0
 
 ### Build
   `git clone https://github.com/rdpanek/docker_jmeter`
@@ -43,4 +43,5 @@ timeStamp;elapsed;label;responseCode;threadName;success;bytes;grpThreads;allThre
 ```
 
 ## Changelog
-- 2.12 JMeter added ( image [rdpanek/jmeter](https://registry.hub.docker.com/u/rdpanek/jmeter/) )
+**7 October 2015** tag 1.0
+- Updated JMeter 2.13

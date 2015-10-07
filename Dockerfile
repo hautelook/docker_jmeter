@@ -1,13 +1,11 @@
 # A image with apache-jmeter-2.12
 # For more information; https://github.com/rdpanek/docker_jmeter
 
-# VERSION 2.12
-
 FROM rdpanek/base
 MAINTAINER Radim Daniel Pánek <rdpanek@gmail.com>
 
 # env
-ENV JMETER_VERSION 2.12
+ENV JMETER_VERSION 2.13
 ENV PLUGINS_VERSION 1.2.0
 ENV JMETER_PATH /srv/var/jmeter
 ENV PLUGINS_PATH $JMETER_PATH/plugins
@@ -19,7 +17,7 @@ RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true 
 # Install Jmeter
 RUN add-apt-repository ppa:webupd8team/java
 RUN apt-get update
-RUN apt-get install -y oracle-java8-installer
+RUN apt-get install -y --force-yes oracle-java8-installer
 
 RUN mkdir -p $JMETER_PATH && cd $JMETER_PATH && \
     wget http://www.eu.apache.org/dist//jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz && \
@@ -30,7 +28,7 @@ RUN mkdir -p $JMETER_PATH && cd $JMETER_PATH && \
 # - JMeterPlugins-Standard 1.2.0
 # - JMeterPlugins-Extras 1.2.0
 # - JMeterPlugins-ExtrasLibs 1.2.0
-RUN apt-get install -y unzip
+RUN apt-get install -y --force-yes unzip
 
 # Install JMeterPlugins-ExtrasLibs
 RUN mkdir -p $PLUGINS_PATH && \

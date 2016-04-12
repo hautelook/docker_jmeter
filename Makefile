@@ -3,7 +3,7 @@
 # make build  - build new image from Dockerfile
 
 
-NAME=rdpanek/jmeter
+NAME=hautelook/jmeter
 VERSION=2.13
 PARAM=$(filter-out $@,$(MAKECMDGOALS))
 

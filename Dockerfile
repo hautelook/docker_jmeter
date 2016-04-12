@@ -1,8 +1,9 @@
 # A image with apache-jmeter-2.12
 # For more information; https://github.com/rdpanek/docker_jmeter
 
-FROM rdpanek/base
-MAINTAINER Radim Daniel Pánek <rdpanek@gmail.com>
+FROM ubuntu:14.04
+RUN sed 's/main$/main universe/' -i /etc/apt/sources.list
+RUN apt-get install -y software-properties-common python3-software-properties
 
 # env
 ENV JMETER_VERSION 2.13
